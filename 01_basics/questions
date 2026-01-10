@@ -1,0 +1,230 @@
+# question no.1
+
+name = input("Enter your name: ")
+age = input("Enter Your Age: ")
+city = input("Enter your city: ")
+print(f"Your Nmae is {name}.your Age is {age}.Your City is {city}.")
+
+# QUESTION NO.2
+
+A = float(input("Enter Your First Number: "))
+B = float(input("Enter Your Second Number: "))
+
+sum = A + B
+print(f"Sum of Tow Numbers is {sum}.")
+difference = A - B
+print(f"Differance Between Two Numbers is {difference}.")
+multiplication = A * B
+print(f"Multiplication of Two Numbers is {multiplication}.")
+Division = A/B
+print(f"Dvidation of Two Numbers is {Division}.")
+
+# question no.3
+
+marks = float(input("Enter Your Marks: "))
+
+if marks>=80:
+    print("Distinction")
+elif marks>=60 and marks<=79:
+    print("First Class")
+elif marks>=40 and marks<=59:
+    print("Pass")
+else :
+    print("Fail")
+
+# question no.4
+
+# using for loop:
+n = int(input("Ente How much Natural Numbers I tell you: "))
+for i in range(1,n+1):
+    n += i
+    print("Natural Number is: ",i)
+
+# using while loop:
+n = int(input("Ente How much Natural Numbers I tell you: "))
+i = 1
+while i <= n:
+    print("Natural Number is: ",i)
+    i += 1
+
+# question no.5
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+num = int(input("Enter a number: "))
+
+if is_prime(num):
+    print("Prime")
+else:
+    print("Not Prime")
+
+# question no.6
+
+n = int(input("Enter a number: "))
+for i in range(1,n+1):
+    print("*"*i)
+
+# question no.7
+
+list = [1,2,3,4,5,67,8,90]
+print(max(list))
+print(min(list))
+list.sort()
+print(list)
+
+# sort method whithot using sort
+arr = [5, 2, 9, 1, 6]
+n = len(arr)
+
+for i in range(n):
+    for j in range(0, n - i - 1):
+        if arr[j] > arr[j + 1]:
+            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+print(arr)
+
+# question no.8
+
+t1 = (1,2,3,4,5)
+t2 = (3,4,5,6,7)
+
+print(t1+t2)
+print(sum(t1)/len(t1))
+print(sum(t2)/len(t2))
+list = list(t1)
+list.append(6)
+print(list)
+
+# question no.9
+
+set1 = {1,2,3,4,5,6,7,8,0,8}
+set2 = {9,8,7,6,5,4,3,2,1,0}
+
+Diffrence = set2 - set1
+print(Diffrence)
+set1.intersection(set2)
+print(set1)
+set1.union(set2)
+print(set1)
+
+# question no.10
+
+student = {
+    "ramesh": 34,
+    "piyush": 98,
+    "parvik": 87,
+    "suresh": 78
+}
+
+highest_marks = max(student.values())
+print(highest_marks)
+
+# question no.11
+
+def is_palindrome_string(s):
+    s = s.lower()
+    return s == s[::-1]
+
+print(is_palindrome_string("madam"))   # True
+print(is_palindrome_string("Level"))   # True
+print(is_palindrome_string("hello"))   # False
+
+# question no.12
+
+def factorial(n):
+    if n == 0 or n == 1:   
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+factorial(7)
+print(factorial(7))
+
+# question no.13
+
+
+class Car:
+    def __init__(self, name, brand, model, year):
+        self.name = name
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def __str__(self):
+        return (
+            f"Car owner name is {self.name}\n"
+            f"Car brand is {self.brand}\n"
+            f"Car model is {self.model}\n"
+            f"Year of car is {self.year}"
+        )
+details = Car(
+    "Piyush",
+    "Bentley",
+    "Bentayga SUV",
+    2024
+)
+
+print(details)
+
+# question no.14
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def calculate_grade(self):
+        if self.marks >= 90:
+            return "A"
+        elif self.marks >= 75:
+            return "B"
+        elif self.marks >= 60:
+            return "C"
+        elif self.marks >= 40:
+            return "D"
+        else:
+            return "F"
+
+s1 = Student("Piyush", 88)
+
+print("Name:", s1.name)
+print("Marks:", s1.marks)
+print("Grade:", s1.calculate_grade())
+
+# question no.15
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+class Manager(Employee):
+    def __init__(self, name, salary, bonus):
+        super().__init__(name, salary)   # call Employee constructor
+        self.bonus = bonus
+
+    def total_salary(self):
+        return self.salary + self.bonus
+m1 = Manager("Piyush", 5000000, 1000000)
+
+print("Name:", m1.name)
+print("Total Salary:", m1.total_salary())
+
+# question no.16
+
+class Employee:
+    def work(self):
+        print("Employee is working")
+
+class Manager(Employee):
+    def work(self):
+        print("Manager is planning and managing the team")
+e = Employee()
+m = Manager()
+
+e.work()
+m.work()
