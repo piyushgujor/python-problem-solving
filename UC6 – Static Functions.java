@@ -1,57 +1,52 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+import java.util.*;
 
 class BannerApp {
-public:
 
     // Static helper for O
-    static vector<string> getO() {
-        return {
+    public static List<String> getO() {
+        return Arrays.asList(
             " ***** ",
             "*     *",
             "*     *",
             "*     *",
             " ***** "
-        };
+        );
     }
 
     // Static helper for P
-    static vector<string> getP() {
-        return {
+    public static List<String> getP() {
+        return Arrays.asList(
             " ***** ",
             "*     *",
             " ***** ",
             "*      ",
             "*      "
-        };
+        );
     }
 
     // Static helper for S
-    static vector<string> getS() {
-        return {
+    public static List<String> getS() {
+        return Arrays.asList(
             " ***** ",
             "*      ",
             " ***** ",
             "      *",
             " ***** "
-        };
-    }
-};
-
-int main() {
-
-    // Get character patterns using static methods
-    vector<string> O = BannerApp::getO();
-    vector<string> P = BannerApp::getP();
-    vector<string> S = BannerApp::getS();
-
-    // Loop-based rendering
-    for (int i = 0; i < O.size(); i++) {
-        cout << O[i] << "   "
-             << P[i] << "   "
-             << S[i] << endl;
+        );
     }
 
-    return 0;
+    public static void main(String[] args) {
+
+        // Get character patterns using static methods
+        List<String> O = getO();
+        List<String> P = getP();
+        List<String> S = getS();
+
+        // Loop-based rendering
+        for (int i = 0; i < O.size(); i++) {
+            System.out.println(O.get(i) + "   "
+                    + P.get(i) + "   "
+                    + S.get(i));
+        }
+    }
 }
