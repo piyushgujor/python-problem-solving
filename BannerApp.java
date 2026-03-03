@@ -21,10 +21,10 @@ public class BannerApp {
         }
     }
 
-    // ✅ DECLARE THIS FIRST
+    // DECLARE THIS FIRST
     private static Map<Character, CharacterPatternMap> patternMap = new HashMap<>();
 
-    // ✅ THEN STATIC BLOCK
+    // THEN STATIC BLOCK
     static {
         patternMap.put('O', new CharacterPatternMap('O', Arrays.asList(
                 " ***** ",
@@ -72,4 +72,5 @@ public class BannerApp {
     public static void main(String[] args) {
         printBanner("OOPS");
     }
+
 }
